@@ -11,7 +11,7 @@ import (
 type Park struct {
 }
 
-func (g *Greeter) Get(ctx context.Context, req *pb.Request, resp *pb.Response) error {
+func (p *Park) Get(ctx context.Context, req *pb.Request, resp *pb.Response) error {
 	resp.Name = "hello"
 	return nil
 }
@@ -19,12 +19,12 @@ func (g *Greeter) Get(ctx context.Context, req *pb.Request, resp *pb.Response) e
 func main() {
 
 	s := micro.NewService(
-		micro.Name("koung-server"),
+		micro.Name("koung-server2"),
 	)
 
 	s.Init()
 
-	pb.RegisterGreeterHandler(s.Server(), new(Greeter))
+	pb.RegisterGreeterHandler(s.Server(), new(Park))
 
 	if err := s.Run(); err != nil {
 		fmt.Println(err)
