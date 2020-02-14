@@ -12,7 +12,7 @@ type Park struct {
 }
 
 func (p *Park) Get(ctx context.Context, req *pb.Request, resp *pb.Response) error {
-	resp.Name = "hello"
+	resp.Name = "hello2"
 	return nil
 }
 
