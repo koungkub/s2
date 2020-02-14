@@ -24,7 +24,7 @@ func main() {
 
 	s.Init()
 
-	pb.RegisterGreeterHandler(s.Server(), new(Park))
+	pb.RegisterParkHandler(s.Server(), new(Park))
 
 	if err := s.Run(); err != nil {
 		fmt.Println(err)
