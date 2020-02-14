@@ -34,7 +34,7 @@ var _ server.Option
 // Client API for Park service
 
 type ParkService interface {
-	Get(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
+	Get(ctx context.Context, in *RRequest, opts ...client.CallOption) (*RResponse, error)
 }
 
 type parkService struct {
@@ -49,9 +49,9 @@ func NewParkService(name string, c client.Client) ParkService {
 	}
 }
 
-func (c *parkService) Get(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
+func (c *parkService) Get(ctx context.Context, in *RRequest, opts ...client.CallOption) (*RResponse, error) {
 	req := c.c.NewRequest(c.name, "Park.Get", in)
-	out := new(Response)
+	out := new(RResponse)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
@@ -62,12 +62,12 @@ func (c *parkService) Get(ctx context.Context, in *Request, opts ...client.CallO
 // Server API for Park service
 
 type ParkHandler interface {
-	Get(context.Context, *Request, *Response) error
+	Get(context.Context, *RRequest, *RResponse) error
 }
 
 func RegisterParkHandler(s server.Server, hdlr ParkHandler, opts ...server.HandlerOption) error {
 	type park interface {
-		Get(ctx context.Context, in *Request, out *Response) error
+		Get(ctx context.Context, in *RRequest, out *RResponse) error
 	}
 	type Park struct {
 		park
@@ -80,6 +80,6 @@ type parkHandler struct {
 	ParkHandler
 }
 
-func (h *parkHandler) Get(ctx context.Context, in *Request, out *Response) error {
+func (h *parkHandler) Get(ctx context.Context, in *RRequest, out *RResponse) error {
 	return h.ParkHandler.Get(ctx, in, out)
 }

@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 service Park {
-  rpc Get(Request) returns (Response) {}
+  rpc Get(RRequest) returns (RResponse) {}
 }
 
-message Request { string name = 1; }
+message RRequest { string name = 1; }
 
-message Response { string name = 1; }
+message RResponse { string name = 1; }

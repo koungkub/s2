@@ -20,78 +20,78 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type Request struct {
+type RRequest struct {
 	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *Request) Reset()         { *m = Request{} }
-func (m *Request) String() string { return proto.CompactTextString(m) }
-func (*Request) ProtoMessage()    {}
-func (*Request) Descriptor() ([]byte, []int) {
+func (m *RRequest) Reset()         { *m = RRequest{} }
+func (m *RRequest) String() string { return proto.CompactTextString(m) }
+func (*RRequest) ProtoMessage()    {}
+func (*RRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_939282ada5a87bf0, []int{0}
 }
 
-func (m *Request) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_Request.Unmarshal(m, b)
+func (m *RRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RRequest.Unmarshal(m, b)
 }
-func (m *Request) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_Request.Marshal(b, m, deterministic)
+func (m *RRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RRequest.Marshal(b, m, deterministic)
 }
-func (m *Request) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Request.Merge(m, src)
+func (m *RRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RRequest.Merge(m, src)
 }
-func (m *Request) XXX_Size() int {
-	return xxx_messageInfo_Request.Size(m)
+func (m *RRequest) XXX_Size() int {
+	return xxx_messageInfo_RRequest.Size(m)
 }
-func (m *Request) XXX_DiscardUnknown() {
-	xxx_messageInfo_Request.DiscardUnknown(m)
+func (m *RRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_Request proto.InternalMessageInfo
+var xxx_messageInfo_RRequest proto.InternalMessageInfo
 
-func (m *Request) GetName() string {
+func (m *RRequest) GetName() string {
 	if m != nil {
 		return m.Name
 	}
 	return ""
 }
 
-type Response struct {
+type RResponse struct {
 	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *Response) Reset()         { *m = Response{} }
-func (m *Response) String() string { return proto.CompactTextString(m) }
-func (*Response) ProtoMessage()    {}
-func (*Response) Descriptor() ([]byte, []int) {
+func (m *RResponse) Reset()         { *m = RResponse{} }
+func (m *RResponse) String() string { return proto.CompactTextString(m) }
+func (*RResponse) ProtoMessage()    {}
+func (*RResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_939282ada5a87bf0, []int{1}
 }
 
-func (m *Response) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_Response.Unmarshal(m, b)
+func (m *RResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RResponse.Unmarshal(m, b)
 }
-func (m *Response) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_Response.Marshal(b, m, deterministic)
+func (m *RResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RResponse.Marshal(b, m, deterministic)
 }
-func (m *Response) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Response.Merge(m, src)
+func (m *RResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RResponse.Merge(m, src)
 }
-func (m *Response) XXX_Size() int {
-	return xxx_messageInfo_Response.Size(m)
+func (m *RResponse) XXX_Size() int {
+	return xxx_messageInfo_RResponse.Size(m)
 }
-func (m *Response) XXX_DiscardUnknown() {
-	xxx_messageInfo_Response.DiscardUnknown(m)
+func (m *RResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_Response proto.InternalMessageInfo
+var xxx_messageInfo_RResponse proto.InternalMessageInfo
 
-func (m *Response) GetName() string {
+func (m *RResponse) GetName() string {
 	if m != nil {
 		return m.Name
 	}
@@ -99,19 +99,20 @@ func (m *Response) GetName() string {
 }
 
 func init() {
-	proto.RegisterType((*Request)(nil), "Request")
-	proto.RegisterType((*Response)(nil), "Response")
+	proto.RegisterType((*RRequest)(nil), "RRequest")
+	proto.RegisterType((*RResponse)(nil), "RResponse")
 }
 
 func init() { proto.RegisterFile("proto/s2.proto", fileDescriptor_939282ada5a87bf0) }
 
 var fileDescriptor_939282ada5a87bf0 = []byte{
-	// 111 bytes of a gzipped FileDescriptorProto
+	// 113 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2b, 0x28, 0xca, 0x2f,
-	0xc9, 0xd7, 0x2f, 0x36, 0xd2, 0x03, 0x33, 0x94, 0x64, 0xb9, 0xd8, 0x83, 0x52, 0x0b, 0x4b, 0x53,
-	0x8b, 0x4b, 0x84, 0x84, 0xb8, 0x58, 0xf2, 0x12, 0x73, 0x53, 0x25, 0x18, 0x15, 0x18, 0x35, 0x38,
-	0x83, 0xc0, 0x6c, 0x25, 0x39, 0x2e, 0x8e, 0xa0, 0xd4, 0xe2, 0x82, 0xfc, 0xbc, 0xe2, 0x54, 0x6c,
-	0xf2, 0x46, 0x2a, 0x5c, 0x2c, 0x01, 0x89, 0x45, 0xd9, 0x42, 0x32, 0x5c, 0xcc, 0xee, 0xa9, 0x25,
-	0x42, 0x1c, 0x7a, 0x50, 0xc3, 0xa4, 0x38, 0xf5, 0x60, 0xfa, 0x94, 0x18, 0x92, 0xd8, 0xc0, 0x76,
-	0x19, 0x03, 0x02, 0x00, 0x00, 0xff, 0xff, 0x54, 0x35, 0xac, 0xaf, 0x7d, 0x00, 0x00, 0x00,
+	0xc9, 0xd7, 0x2f, 0x36, 0xd2, 0x03, 0x33, 0x94, 0xe4, 0xb8, 0x38, 0x82, 0x82, 0x52, 0x0b, 0x4b,
+	0x53, 0x8b, 0x4b, 0x84, 0x84, 0xb8, 0x58, 0xf2, 0x12, 0x73, 0x53, 0x25, 0x18, 0x15, 0x18, 0x35,
+	0x38, 0x83, 0xc0, 0x6c, 0x25, 0x79, 0x2e, 0xce, 0xa0, 0xa0, 0xd4, 0xe2, 0x82, 0xfc, 0xbc, 0xe2,
+	0x54, 0x6c, 0x0a, 0x8c, 0xd4, 0xb8, 0x58, 0x02, 0x12, 0x8b, 0xb2, 0x85, 0xe4, 0xb8, 0x98, 0xdd,
+	0x53, 0x4b, 0x84, 0x38, 0xf5, 0x60, 0xc6, 0x49, 0x71, 0xe9, 0xc1, 0x75, 0x2a, 0x31, 0x24, 0xb1,
+	0x81, 0xed, 0x33, 0x06, 0x04, 0x00, 0x00, 0xff, 0xff, 0xe3, 0x51, 0x51, 0xfc, 0x81, 0x00, 0x00,
+	0x00,
 }
